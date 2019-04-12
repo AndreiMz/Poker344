@@ -1,0 +1,30 @@
+- include 'material/includes/material_css.html' 
+- include 'material/includes/material_js.html'
+- load static
+%link{'rel': 'stylesheet', 'href': "{% static 'css/cards.css' %}"}
+%body{style: 'background:darkgray'}
+	%nav
+		.nav-wrapper{style: 'background:black; color:white;'}
+			%a.brand-logo
+				Poker344
+			%ul#nav-mobile.right
+				- if user.is_authenticated
+					%li
+						%a 
+							Search for game
+					%li
+						%a{'href': "/users/logout"}
+							Log out
+				- else
+					%li
+						%a{'href': '/users/login'}
+							Login
+					%li
+						%a{'href': '/users/signup'}
+							Register
+
+	.header
+	.content.container
+		.row.justify-content-center
+			.col-6
+				- block content

@@ -37,8 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'frontend',
+    'backend',
+    'viewflow',
+    'material',
 ]
+
+AUTH_USER_MODEL = 'backend.PokerUser'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,18 +63,28 @@ ROOT_URLCONF = 'Poker344.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': ['/backend/templates'],
+        #'APP_DIRS': True,
         'OPTIONS': {
+            'loaders':(
+                'hamlpy.template.loaders.HamlPyFilesystemLoader',
+                'hamlpy.template.loaders.HamlPyAppDirectoriesLoader',
+            ),
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries':{
+                'random_numbers': 'backend.templatetags.random_numbers',
+            }
         },
     },
 ]
+TEMPLATE_LOADERS = (
+
+)
 
 WSGI_APPLICATION = 'Poker344.wsgi.application'
 

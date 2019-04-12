@@ -1,0 +1,19 @@
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+
+<div class='container'>
+	<div class='row' style= 'height:22%'>
+		<h1 class='justify-content-center' style='text-align:center'>
+			Login
+	</div>
+	<form method='post' style= "height: 35%;">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class='btn-large waves-effect waves-light' type = 'submit' style= 'width: 100%'>
+			<i class='material-icons.right'>
+			Login
+		</button>
+	</form>
+	<div class='row' style= 'height:22%'>
+	</div>
+</div>

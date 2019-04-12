@@ -1,0 +1,83 @@
+- extends 'layout.haml'
+- load random_numbers
+- load static
+
+- block content
+	.container.justify-content-center{style: 'width:100%; border-radius:5%'}
+		.row{style:'margin-left:5rem'}
+			%section.card.card--heart{value: '4'}
+				.card__inner
+					.card__column
+						.card__symbol
+						.card__symbol
+					.card__column
+						.card__symbol
+						.card__symbol
+			%section.card.card--heart{value: '5'}
+				.card__inner
+					.card__column
+						.card__symbol
+						.card__symbol
+					.card__column.card__column--centered
+						.card__symbol
+					.card__column
+						.card__symbol
+						.card__symbol
+			%section.card.card--heart{value: '6'}
+				.card__inner
+					.card__column
+						.card__symbol
+						.card__symbol
+						.card__symbol
+					.card__column
+						.card__symbol
+						.card__symbol
+						.card__symbol
+			%section.card.card--heart{value: '7'}
+				.card__inner
+					.card__column
+						.card__symbol
+						.card__symbol
+					.card__column.card__column--centered
+						.card__symbol
+					.card__column
+						.card__symbol
+						.card__symbol
+			%section.card.card--heart{value: '8'}
+				.card__inner
+					.card__column
+						.card__symbol
+						.card__symbol
+						.card__symbol
+					.card__column.card__column--centered
+						.card__symbol
+						.card__symbol
+					.card__column
+						.card__symbol
+						.card__symbol
+						.card__symbol
+
+		- if user.is_authenticated
+			%table
+				%thead
+					%tr
+						%th
+							Room Name
+						%th
+							Total Players
+						%th
+							Average Room Experience
+						%th
+				%tbody
+					- for i in i|rjust:20 
+						%tr
+							%td
+								- random_name
+							%td
+								- random_int 1 9
+								\/10
+							%td
+								- random_exp
+							%td
+								%button.btn-small
+									Join

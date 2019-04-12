@@ -1,0 +1,15 @@
+- include 'material/includes/material_css.html' 
+- include 'material/includes/material_js.html'
+
+.container
+	.row{style: 'height:22%'}
+		%h1.justify-content-center{style:'text-align:center; width:100%'}
+			%a.btn-large.waves-effect.waves-light{style: 'width:30%', href:'/'}
+				Go back
+	%form{'method': 'post', style: "height: 35%;"}
+		- csrf_token
+		= form.as_p
+		%button.btn-large.waves-effect.waves-light{'type': 'submit', 'style': 'width: 100%'}
+			%i.material-icons.right
+			Sign up
+	.row{style: 'height:22%'}
