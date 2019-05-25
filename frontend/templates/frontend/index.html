@@ -5,15 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
   <title>Django DRF - React : Start Page</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static "frontend/muiepsd.css" %}">
+  <link rel="stylesheet" href="{% static "frontend/lol.css" %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
   <section class="section">
     <div class="container">
          <div id="app" class="columns"><!-- React --></div>
+         <div class='container-fluid'>
+          <div class='row'>
+            <div class='col-xs-12 text-center'><h1>Poker Hand Checker</h1></div>
+            <div class='col-xs-12 table-area'>
+              <div class='row'>
+                <div class='row picked-cards-area'>
+                  <!--- Picked cards are placed here --->
+                </div>
+                <div class='col-xs-12 below-area'></div>
+                <div class='col-xs-12'>
+                  <div class='row'>
+                    <div class='col-sm-8 col-xs-12 '>
+                      
+                      <div class='row hand-combo-area text-center'>
+                        <!--- Highest possible hands are listed here --->
+                      </div>
+                      
+                    </div>
+                    <div class='col-sm-4 col-xs-12  interface text-center'>
+                      <button class='btn' onclick='resetButton()'>Reset cards</button>
+                      <button  id='getHand' onclick="choosePairs()"> Get Hand</button>
+                      <div class='table1' id='hand' style="width:200px;"></div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+      
+            <div class='col-xs-12 col-sm-6 col-md-3 cards-pickup-area' id='clubs'></div>
+            <div class='col-xs-12 col-sm-6 col-md-3 cards-pickup-area' id='diamonds'></div>
+            <div class='col-xs-12 col-sm-6 col-md-3 cards-pickup-area' id='hearts'></div>
+            <div class='col-xs-12 col-sm-6 col-md-3 cards-pickup-area' id='spades'></div>
+          </div>            
+        </div>
+     Welcome {{ user.username }} to training table.
     </div>
   </section>
 </body>
-{% load static %}
+<script src="../../static/frontend/yolo.js"></script>
+<script src="{ static "frontend/yolo.js" %}"></script>
 <script src="{% static "frontend/main.js" %}"></script>
 </html>
 

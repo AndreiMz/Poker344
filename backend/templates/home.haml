@@ -69,6 +69,16 @@
 							Average Room Experience
 						%th
 				%tbody
+					%tr
+						%td 
+							Training room
+						%td 
+							0/1
+						%td
+							TRAINING
+						%td
+							%a{href: '/react'}
+								JOIN
 					- for i in i|rjust:20 
 						%tr
 							%td
@@ -79,5 +89,5 @@
 							%td
 								- random_exp
 							%td
-								%button.btn-small
+								%button.btn-small{disabled}
 									Join
