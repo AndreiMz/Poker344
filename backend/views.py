@@ -15,4 +15,6 @@ class Register(generic.CreateView):
 
 class Login(generic.CreateView):
 	template_name = 'registration/login.haml'
-	
+
+class Profile(TemplateView):
+	template_name = 'profile.haml'

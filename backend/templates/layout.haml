@@ -5,7 +5,7 @@
 %body{style: 'background:darkgray'}
 	%nav
 		.nav-wrapper{style: 'background:black; color:white;'}
-			%a.brand-logo
+			%a.brand-logo{href: '/'}
 				Poker344
 			%ul#nav-mobile.right
 				- if user.is_authenticated
@@ -15,6 +15,9 @@
 					%li
 						%a{'href': "/users/logout"}
 							Log out
+					%li
+						%a{'href': "/profile"}
+							My Profile
 				- else
 					%li
 						%a{'href': '/users/login'}

@@ -1,0 +1,18 @@
+- extends 'layout.haml'
+
+- block content
+    .container{style: 'background: white; border-radius: 2vw; box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);'}
+        .row
+            %h2{style: 'text-align:center'}
+                My profile
+        .row
+            %h3.media-heading{style: 'margin:auto; text-align:center;'}
+                Username:
+                = user.username
+            %h3.media-heading{style: 'margin:auto; text-align:center;'}
+                Email: 
+                = user.email
+        .row
+            %h3.media-heading{style: 'margin:auto; text-align:center;'}
+                Balance: 
+                = user.balance

@@ -13,5 +13,6 @@ class PokerUser(AbstractUser):
 		(ADVANCED, 'Advanced'),
 		(INTERMEDIATE, 'Intermediate'),
 	)
+	balance = models.CharField(max_length = 100)
 	level = models.CharField(max_length=2, choices=LEVEL_CHOICES, default=BEGGINER,)
 	objects = PokerUserManager()
